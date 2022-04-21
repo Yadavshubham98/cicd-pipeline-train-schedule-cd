@@ -8,7 +8,7 @@ pipeline {
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
-        stage('DeployToStaging') {
+       stage('DeployToStaging') {
             when {
                 branch 'master'
             }
@@ -29,7 +29,7 @@ pipeline {
                                         sourceFiles: 'dist/trainSchedule.zip',
                                         removePrefix: 'dist/',
                                         remoteDirectory: '/tmp',
-                                        execCommand: 'sudo /usr/bin/systemctl stop train-schedule && rm -rf /opt/train-schedule/* && unzip /tmp/trainSchedule.zip -d /opt/train-schedule && sudo /usr/bin/systemctl start train-schedule'
+                                        execCommand: 'sudo /usr/bin/systemctl stop Automated Deployment Multibranch Pipeline && rm -rf /opt/Automated Deployment Multibranch Pipeline/* && unzip /tmp/trainSchedule.zip -d /opt/Automated Deployment Multibranch Pipeline && sudo /usr/bin/systemctl start Automated Deployment Multibranch Pipeline'
                                     )
                                 ]
                             )
